@@ -97,11 +97,14 @@ download_data2 <- function(station, year) {
   download_data(station, year:2016)
 }
 
-out <- stations %$% map2(station, from, download_data2)
+#out <- stations %$% map2(station, from, download_data2)
+
 cambodia <- stations %>% filter(country=="Cambodia") %$% map2(station, from, download_data2)
 save.image()
+
 malaysia <- stations %>% filter(country=="Malaysia") %$% map2(station, from, download_data2)
 save.image()
+
 vietnam1 <- stations %>% filter(country=="Vietnam") %>% head(5) %$% map2(station, from, download_data2)
 vietnam2 <- stations %>% filter(country=="Vietnam") %>% slice(6:10) %$% map2(station, from, download_data2)
 vietnam3 <- stations %>% filter(country=="Vietnam") %>% slice(11:15) %$% map2(station, from, download_data2)
@@ -153,7 +156,6 @@ save.image()
 
 thailand1 <- stations %>% filter(country=="Thailand") %>% slice(1:5) %$% map2(station, from, download_data2)
 save.image()
-
 thailand2 <- stations %>% filter(country=="Thailand") %>% slice(6:10) %$% map2(station, from, download_data2)
 save.image()
 thailand3 <- stations %>% filter(country=="Thailand") %>% slice(11:15) %$% map2(station, from, download_data2)
@@ -189,15 +191,40 @@ save.image()
 thailand18 <- stations %>% filter(country=="Thailand") %>% slice(86:91) %$% map2(station, from, download_data2)
 save.image()
 
-
-
 thailand <- stations %>% filter(country=="Thailand") %$% map2(station, from, download_data2)
 save.image()
-
 
 #vientiane <- download_data(489400,1954:2016)
 #devtools::use_data(vientiane, overwrite = TRUE)
 
+myanmar <- stations %>% filter(country=="Myanmar") %$% map2(station, from, safely(download_data2))
+save.image()
+
 # ------------------------------------------------------------------------------
 
+names(cambodia) <- stations %>% filter(country == "Cambodia") %>% select(station) %>% unlist
+names(malaysia) <- stations %>% filter(country == "Malaysia") %>% select(station) %>% unlist
+vietnam <- c(vietnam1, vietnam2, vietnam3, vietnam4, vietnam5, vietnam6, vietnam7)
+names(vietnam) <- stations %>% filter(country == "Vietnam") %>% select(station) %>% unlist
+thailand13 <- thailand13[-1]
+thailand <- c(thailand1, thailand2, thailand3, thailand4, thailand5, thailand6, thailand7, thailand8, thailand9, thailand10, thailand11, thailand12, thailand13, thailand14, thailand15, thailand16, thailand17, thailand18)
+names(thailand) <- stations %>% filter(country == "Thailand") %>% select(station) %>% unlist
+philippines <- c(philippines1, philippines2, philippines3, philippines4, philippines5, philippines6, philippines7, philippines8, philippines9, philippines10, philippines11)
+names(philippines) <- stations %>% filter(country == "Philippines") %>% select(station) %>% unlist
+names(laopdr) <- stations %>% filter(country == "Laos") %>% select(station) %>% unlist
+laos <- laopdr
+names(myanmar) <- stations %>% filter(country == "Myanmar") %>% select(station) %>% unlist
+sel <- which(sapply(myanmar, function(x) !is.null(x$error)))
+myanmar <- myanmar[-sel]
+myanmar <- lapply(myanmar, function(x) x$result)
+stations <- as.data.frame(stations[!(stations$station %in% names(sel)), ])
+meteo <- c(laos, vietnam, cambodia, thailand, myanmar, philippines, malaysia)
+sel <- which(sapply(meteo, function(x) is.character(x$day)))
+for(i in sel) meteo[[i]]$day <- as.Date(meteo[[i]]$day)
+meteo <- dplyr::bind_rows(meteo, .id = "station")
 
+# ------------------------------------------------------------------------------
+
+meteo$station <- as.integer(meteo$station)
+stations$station <- as.integer(stations$station)
+devtools::use_data(meteo, stations, overwrite = TRUE)
