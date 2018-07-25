@@ -9,4 +9,3 @@
 The tutiempo package provides daily times series for 7 countries in southeast
 Asia
 }
-

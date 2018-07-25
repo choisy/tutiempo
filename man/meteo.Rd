@@ -8,9 +8,9 @@
 \itemize{
  \item \code{station}: climatic station ID
  \item \code{day}: date of data colletion
- \item \code{ta}: average temperature (°C)
- \item \code{tx}: maximum temperature (°C)
- \item \code{tn}: minimum temperature (°C)
+ \item \code{ta}: average temperature (Centigrad)
+ \item \code{tx}: maximum temperature (Centigrad)
+ \item \code{tn}: minimum temperature (Centigrad)
  \item \code{slp}: atmospheric pressure at sea level (hPa)
  \item \code{h}: average relative humidity (%)
  \item \code{pp}: total rainfall and / or snowmelt (mm)
@@ -38,4 +38,3 @@ The variable \code{station} is a key shared with dataset
 \code{\link{stations}}.
 }
 \keyword{datasets}
-
