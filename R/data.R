@@ -20,7 +20,7 @@
 #'  \item \code{ra}: boolean indicating whether there was rain or drizzle
 #'  \item \code{sn}: boolean indicating whether it snowed
 #'  \item \code{ts}: boolean indicating whether there were storm
-#'  \item \code{fg}: boolean indicating whether there was fod
+#'  \item \code{fg}: boolean indicating whether there was fog
 #' }
 #'
 #' @details The variable \code{station} is a key shared with dataset
