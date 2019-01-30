@@ -60,7 +60,7 @@ download_data <- function(station, years, months = 1:12, error = "HTTP error 404
   require(purrr) # for "map", "map2", "map_int"
   require(dplyr) # for "bind_rows", "select", "mutate", "mutate_if", "mutate_at"
   require(lubridate) # for "ymd"
-  {months:years} %<-% expand.grid(months, years)
+  c(months, years) %<-% expand.grid(months, years)
   out <- map2(years, months, make_url, station = station) %>%
     map(safe_get_page, error = error) %>%
     transpose
@@ -94,7 +94,7 @@ library(magrittr) # for "%$%"
 stations <- read_excel("climatic stations.xlsx")
 
 download_data2 <- function(station, year) {
-  download_data(station, year:2016)
+  download_data(station, year:2017)
 }
 
 #out <- stations %$% map2(station, from, download_data2)
