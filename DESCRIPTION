@@ -8,6 +8,6 @@ Description: The daily meteorological data for 7 countries in Southeast
    Asia, from https://en.tutiempo.net .
 License: MIT + file LICENSE
 LazyData: TRUE
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Depends: 
     R (>= 2.10)
