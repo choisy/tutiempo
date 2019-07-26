@@ -7,6 +7,9 @@ Maintainer: Marc Choisy <marc.choisy@ird.fr>
 Description: The daily meteorological data for 7 countries in Southeast 
    Asia, from https://en.tutiempo.net .
 License: MIT + file LICENSE
+URL: https://github.com/choisy/tutiempo
+BugReports: https://github.com/choisy/tutiempo/issues
+Encoding: UTF-8
 LazyData: TRUE
 RoxygenNote: 6.1.1
 Depends: 
