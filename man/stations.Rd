@@ -29,4 +29,3 @@ The variable \code{station} is a key shared with dataset
 \code{\link{meteo}}.
 }
 \keyword{datasets}
-
