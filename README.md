@@ -9,6 +9,8 @@
 status](https://ci.appveyor.com/api/projects/status/github/epix-project/tutiempo?branch=master&svg=true)](https://ci.appveyor.com/project/epix-project/tutiempo)
 [![Travis build
 status](https://travis-ci.org/epix-project/tutiempo.svg?branch=master)](https://travis-ci.org/epix-project/tutiempo)
+[![Codecov test
+coverage](https://codecov.io/gh/epix-project/tutiempo/branch/master/graph/badge.svg)](https://codecov.io/gh/epix-project/tutiempo?branch=master)
 <!-- badges: end -->
 
 The goal of tutiempo is to …
