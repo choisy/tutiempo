@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/epix-project/tutiempo?branch=master&svg=true)](https://ci.appveyor.com/project/epix-project/tutiempo)
 <!-- badges: end -->
 
 The goal of tutiempo is to …
@@ -21,5 +23,4 @@ devtools::install_github("epix-project/tutiempo")
 
 ``` r
 library(tutiempo)
-## basic example code
 ```
