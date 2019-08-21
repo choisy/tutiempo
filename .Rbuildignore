@@ -2,3 +2,8 @@
 ^\.Rproj\.user$
 ^data-raw$
 ^README\.Rmd$
+<<<<<<< HEAD
+^appveyor\.yml$
+^\.travis\.yml$
+=======
+>>>>>>> 34b48d04b2268b40cb9debe53e4a819ee8274f50

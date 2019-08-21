@@ -5,6 +5,10 @@
 
 <!-- badges: start -->
 
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/epix-project/tutiempo?branch=master&svg=true)](https://ci.appveyor.com/project/epix-project/tutiempo)
+[![Travis build
+status](https://travis-ci.org/epix-project/tutiempo.svg?branch=master)](https://travis-ci.org/epix-project/tutiempo)
 <!-- badges: end -->
 
 The `tutiempo` package provides meteorological data from
@@ -18,7 +22,7 @@ The `tutiempo` package provides meteorological data from
   - Thailand
   - Vietnam
 
-Until the 31st of December, 2016
+Until the 31st of December, 2016.
 
 ## Installation
 
